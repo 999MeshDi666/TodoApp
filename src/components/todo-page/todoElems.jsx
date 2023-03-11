@@ -1,15 +1,21 @@
 import { modalUpdateTodo } from "../../store/slices/modalSlice";
+import { setCurrentTodo } from "../../store/slices/todoSlice";
 import { useDispatch } from "react-redux";
 import ListGroup from "react-bootstrap/ListGroup";
 import UpdateModal from "../modals/updateModal";
+
+
 const TodoElems = ({ elem }) => {
   const dispatch = useDispatch();
-  const handleShowModal = () => {
+ 
+  const handleShowModal = (elem) => {
     dispatch(modalUpdateTodo());
+    dispatch(setCurrentTodo(elem))
   };
+  
   return (
     <>
-      <ListGroup className="w-100" onClick={handleShowModal}>
+      <ListGroup className="w-100" onClick={()=>handleShowModal(elem)}>
         <ListGroup.Item>
           <h6 className={`my-1 ${elem.hasCompleted ? "done" : ""}`}>
             Название: {elem.title}
