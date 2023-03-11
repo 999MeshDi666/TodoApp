@@ -5,7 +5,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 import UpdateModal from "../modals/updateModal";
 
 
-const TodoElems = ({ elem }) => {
+const TodoItems = ({ elem }) => {
   const dispatch = useDispatch();
  
   const handleShowModal = (elem) => {
@@ -15,7 +15,7 @@ const TodoElems = ({ elem }) => {
   
   return (
     <>
-      <ListGroup className="w-100" onClick={()=>handleShowModal(elem)}>
+      <ListGroup className="list-items w-100" onClick={()=>handleShowModal(elem)}>
         <ListGroup.Item>
           <h6 className={`my-1 ${elem.hasCompleted ? "done" : ""}`}>
             Название: {elem.title}
@@ -30,4 +30,4 @@ const TodoElems = ({ elem }) => {
   );
 };
 
-export default TodoElems;
+export default TodoItems;

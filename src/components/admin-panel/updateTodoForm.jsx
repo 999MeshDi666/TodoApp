@@ -12,11 +12,10 @@ const UpdateTodoForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     dispatch(updateTodo(todo))
-    setTodo(chosenTodo);
   };
   return (
     <Form className="w-100 mx-auto" onSubmit={handleSubmit}>
-      <h2>Добавить новою заметку</h2>
+      <h2>Обновить заметку заметку {chosenTodo.id}</h2>
       <FormFields 
         todo={todo} 
         setTodo = {setTodo}

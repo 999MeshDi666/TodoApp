@@ -47,7 +47,7 @@ const FormFields = ({todo, setTodo}) => {
         />
       </Form.Group>
       <Button variant="primary" type="submit">
-        Добавить
+        Подтвердить
       </Button>
     </>
   );

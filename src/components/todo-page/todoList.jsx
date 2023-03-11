@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import TodoElems from "./todoElems";
+import TodoItems from "./todoItems";
 import TodoButtons from "./todoBtns";
 import { useEffect } from "react";
 const TodoList = () => {
@@ -12,7 +12,7 @@ const TodoList = () => {
     <>
       {todoList.map((elem) => (
         <div className="d-flex" key={elem.id}>
-          <TodoElems elem={elem} />
+          <TodoItems elem={elem} />
           <TodoButtons elem={elem} />
         </div>
       ))}
