@@ -12,6 +12,7 @@ const FormFields = ({todo, setTodo}) => {
       [event.target.name]: value,
     });
   };
+
   return (
 
     <>

@@ -49,7 +49,14 @@ export const todoSlice = createSlice({
       state.currentTodo = action.payload;
     },
     updateTodo: (state, action) => {
-      state.todoList.splice(action.payload.id, 1, action.payload);
+      state.todoList.map((elem)=>{
+        if(elem.id === action.payload.id){
+          elem.title = action.payload.title;
+          elem.desc = action.payload.desc;
+          elem.hasCompleted = action.payload.hasCompleted
+        }
+      })
+     
     },
   },
 });
