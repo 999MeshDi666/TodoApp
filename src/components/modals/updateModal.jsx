@@ -1,5 +1,5 @@
-import { modalUpdateTodo } from "../../store/slices/modalSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { modalUpdateTodo } from "../../store/slices/modalSlice";
 import UpdateTodoForm from "../admin-panel/updateTodoForm";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";

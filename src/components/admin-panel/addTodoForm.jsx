@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import FormFields from "./formFields";
-
-import Form from "react-bootstrap/Form";
 import { addTodo } from "../../store/slices/todoSlice";
+import FormFields from "./formFields";
+import Form from "react-bootstrap/Form";
 import uuid from 'react-uuid';
 
 const AddTodoForm = () => {

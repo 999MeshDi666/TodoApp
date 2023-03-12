@@ -1,16 +1,17 @@
-import { completeTodo } from "../../store/slices/todoSlice";
-import {  modalConfirmRemove} from "../../store/slices/modalSlice";
+import { completeTodo, setCurrentTodo } from "../../store/slices/todoSlice";
+import { modalConfirmRemove } from "../../store/slices/modalSlice";
 import { useDispatch } from "react-redux";
+import RemoveModal from "../modals/removeModal";
 import Button from "react-bootstrap/Button";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
-import RemoveModal from "../modals/removeModal";
-const TodoButtons = ({ elem }) => {
 
+const TodoButtons = ({ elem }) => {
+  
   const dispatch = useDispatch();
-  const handleShowModal = () =>{
+  const handleShowModal = (elem) =>{
     dispatch(modalConfirmRemove());
+    dispatch(setCurrentTodo(elem))
   }
- 
   const handleCompleteTodo = (id) => {
     dispatch(completeTodo(id));
   };
@@ -22,18 +23,18 @@ const TodoButtons = ({ elem }) => {
                 variant="success"
                 onClick={() => handleCompleteTodo(elem.id)}
             >
-                {elem.hasCompleted ? "Uncomplete" : "Complete"}
+              {elem.hasCompleted ? "Uncomplete" : "Complete"}
             </Button>
             <Button
                 className="todo-btn"
                 variant="danger"
-                onClick={handleShowModal}
+                onClick={()=>handleShowModal(elem)}
             >
                 Delete
             </Button>
             
         </ButtonGroup>
-        <RemoveModal elem={elem}/>
+        <RemoveModal/>
     </>
     
   );

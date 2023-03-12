@@ -56,7 +56,6 @@ export const todoSlice = createSlice({
           elem.hasCompleted = action.payload.hasCompleted
         }
       })
-     
     },
   },
 });

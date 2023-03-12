@@ -1,7 +1,8 @@
+import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import TodoItems from "./todoItems";
 import TodoButtons from "./todoBtns";
-import { useEffect } from "react";
+
 const TodoList = () => {
   const todoList = useSelector((state) => state.todo.todoList);
 
